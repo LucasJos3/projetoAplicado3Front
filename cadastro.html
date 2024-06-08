@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="ISO-8859-1" />
+    <title>ADMINISTRATIVE AREA</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="header">
+     <a href="./index.html"> <img src="./images/logo.png" alt="Logo" class="logo" /></a>
+
+      <div class="user-icon">
+        <img src="images/circle-user.png" alt="User Icon" />
+      </div>
+    </div>
+
+    
+      <header>
+        <h1
+          style="
+            color: #333;
+            font-size: 30px;
+            font-weight: bold;
+            align-items: center;
+          "
+        >
+          Cadastrar Usuario
+        </h1>
+      </header>
+      <!-- A ação do formulário deve ser preferencialmente em HTTPS -->
+      <form
+        action="RecuperarDadosServlet?operacao=efetuarCadastro"
+        method="POST"
+      >
+        <div class="form-group">
+          <label for="login">Login</label>
+          <input type="text" name="login" required />
+        </div>
+
+        <div class="form-group">
+          <label for="senha">Senha</label>
+          <input type="password" name="senha" required />
+        </div>
+
+        <div class="form-group">
+          <label for="tipo">Tipo</label>
+          <select name="tipo">
+            <option value="0">Administrador</option>
+            <option value="1">Operador</option>
+          </select>
+        </div>
+        <input type="submit" value="ok" />
+      </form>
+    </div>
+    <p id="time"></p>
+  </body>
+</html>

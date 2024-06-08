@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="ISO-8859-1" />
+    <title>RELATÓRIO</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <a href="./admin.html">
+        <img src="./images/logo.png" alt="Logo" class="logo"
+      /></a>
+      <nav>
+        <a href="./relatorio.html" class="active">Relatorio</a>
+        <a href="#cadastrar-produto">Cadastrar Produto</a>
+        <a href="#consultar-producao">Consultar Produção</a>
+      </nav>
+      <div class="user-icon">
+        <img src="images/circle-user.png" alt="User Icon" />
+      </div>
+    </div>
+
+    
+      <ul>
+  
+        <h2>Gerenciamento de Relatorios</h2>
+      </ul>
+   
+    <div class="container">
+      <div class="sidebar" id="mySidebar">
+        <button class="closebtn" onclick="closeNav()">×</button>
+        <ul>
+            <li><a href="./relatorio_atual.html">Gerar Relatorio</a></li>
+            <li><a href="#">Vizualizar Relatorios</a></li>
+        </ul>
+        
+    </div>
+    <button class="openbtn" onclick="openNav()"> ☰ </button>
+    <p id="time"></p>
+
+    <script src="script/script.js"></script>
+    
+  </body>
+</html>

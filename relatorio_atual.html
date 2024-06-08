@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="ISO-8859-1" />
+    <title>RELATÓRIO ATUAL</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <img src="./images/logo.png" alt="Logo" class="logo" />
+      <nav>
+        <a href="./relatorio.html" class="active">Relatorio</a>
+        <a href="#cadastrar-produto">Cadastrar Produto</a>
+        <a href="#consultar-producao">Consultar Produção</a>
+      </nav>
+      <div class="user-icon">
+        <img src="images/circle-user.png" alt="User Icon" />
+      </div>
+    </div>
+    <header>
+      <h1
+        style="
+          color:  #333;
+          font-size: 30px;
+          font-weight: bold;
+          align-items: center;
+        "
+      >
+        Relatório Atual
+      </h1>
+      <div class="container">
+        <div class="sidebar" id="mySidebar">
+          <button class="closebtn" onclick="closeNav()">×</button>
+          <ul>
+              <li><a href="./relatorio_atual.html" class="active" >Gerar Relatorio</a></li>
+              <li><a href="./visualizacao_atual.html">Vizualizar Relatorios</a></li>
+          </ul>
+          
+      </div>
+      <button class="openbtn" onclick="openNav()"> ☰ </button>
+    </header>
+    
+    <nav>
+      
+        <div class="content">
+          <div class="form-container">
+            <form 
+            action="RecuperarDadosServlet?operacao=gerarRelatorio"
+            method="post"
+          >
+              <label for="lote">LOTE :</label>
+              <input type="text" id="lote" name="lote"><br>
+              <label for="data">DATA :</label>
+              <input type="date" id="data" name="data"><br>
+              <label for="turno">TURNO :</label>
+              <input type="text" id="turno" name="turno"><br>
+              <button type="button">GERAR</button>
+          </div>
+    </nav>
+    <script src="script/script.js"></script>
+  </body>
+</html>
