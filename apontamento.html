@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="ISO-8859-1" />
+    <title>Inserir apontamento</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <img src="./images/logo.png" alt="Logo" class="logo" />
+      <nav>
+        <a href="./relatorio.html" class="active">Relatorio</a>
+        <a href="#cadastrar-produto">Cadastrar Produto</a>
+        <a href="#consultar-producao">Consultar Produção</a>
+      </nav>
+      <div class="user-icon">
+        <img src="images/circle-user.png" alt="User Icon" />
+      </div>
+    </div>
+    <header>
+      <h1
+        style="
+          color:  #333;
+          font-size: 30px;
+          font-weight: bold;
+          align-items: center;
+        "
+      >
+      Inserir apontamento
+      </h1>
+      <div class="container">
+        <div class="sidebar" id="mySidebar">
+          <button class="closebtn" onclick="closeNav()">×</button>
+          <ul>
+              <li><a href="./relatorio_atual.html" class="active" >Gerar Relatorio</a></li>
+              <li><a href="./visualizacao_atual.html">Vizualizar Relatorios</a></li>
+          </ul>
+          
+      </div>
+      <button class="openbtn" onclick="openNav()"> ☰ </button>
+    </header>
+    
+    <nav>
+      
+        <div class="content">
+          <div class="form-container">
+            <form 
+            action="RecuperarDadosServlet?operacao=gerarRelatorio"
+            method="post"
+          >
+              <label for="planQantity">Quantidade Planejada</label>
+              <input type="text" id="planQantity" name="planQantity"><br>
+              <label for="realQantity">Quantidade Real</label>
+              <input type="text" id="realQantity" name="realQantity"><br>
+              <label for="unit">Unidade :</label>
+              <input type="text" id="unit" name="unit"><br>
+              <label for="startTime">Inicio de produção:</label>
+              <input type="text" id="startTime" name="startTime"><br>
+              <label for="finishTime">Fim de produção:</label>
+              <input type="text" id="finishTime" name="finishTime"><br>
+              <label for="downTime">Tempo de parada:</label>
+              <input type="text" id="finishTime" name="finishTime"><br>
+              <label for="packgeType">Embalagem:</label>
+              <input type="text" id="packgeType" name="packgeType"><br>
+              <label for="labelType">Tipo de etiqueta:</label>
+              <input type="text" id="labelType" name="labelType"><br>
+              <label for="equipment">Maquina:</label>
+              <input type="text" id="equipment" name="equipment"><br>
+              <label for="workShift">Turno:</label>
+              <input type="text" id="workShift" name="workShift"><br>
+              <label for="productionBatch">LOTE:</label>
+              <input type="text" id="productionBatch" name="productionBatch"><br>
+              <label for="bestBefore">Data de validade:</label>
+              <input type="text" id="bestBefore" name="bestBefore"><br>
+              <label for="notes">Observações:</label>
+              <input type="text" id="notes" name="notes"><br>
+              <button type="button">GERAR</button>
+          </div>
+    </nav>
+    <script src="script/script.js"></script>
+  </body>
+</html>
