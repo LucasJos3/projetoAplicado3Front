@@ -45,8 +45,20 @@
       <button class="openbtn" onclick="openNav()"> ☰ </button>
     </header>
     
-    <nav>
-      
+   
+    <div class="content">
+      <div class="form-container">
+        <form 
+        action="RecuperarDadosServlet?operacao=gerarRelatorio"
+        method="post"
+      >
+          <label for="id">Identificador:</label>
+          <input type="text" id="id" name="id"><br>
+          
+          <button type="button">GERAR</button>
+      </div>
+      <br>
+
         <div class="content">
           <div class="form-container">
             <form 
@@ -55,13 +67,20 @@
           >
               <label for="lote">LOTE :</label>
               <input type="text" id="lote" name="lote"><br>
-              <label for="data">DATA :</label>
-              <input type="date" id="data" name="data"><br>
-              <label for="turno">TURNO :</label>
-              <input type="text" id="turno" name="turno"><br>
+              
               <button type="button">GERAR</button>
           </div>
-    </nav>
+
+          <br>
+  
+  
+      
+    
+
+        
+
+
+    
     <script src="script/script.js"></script>
   </body>
 </html>

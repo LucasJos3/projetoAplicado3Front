@@ -12,11 +12,13 @@
   </head>
   <body>
     <div class="header">
-      <img src="./images/logo.png" alt="Logo" class="logo" />
+      <a href="./admin.html">
+        <img src="./images/logo.png" alt="Logo" class="logo"
+      /></a>
       <nav>
-        <a href="./relatorio.html" class="active">Relatorio</a>
+        <a href="./relatorio.html" ">Relatorio</a>
         <a href="#cadastrar-produto">Cadastrar Produto</a>
-        <a href="#consultar-producao">Consultar Produção</a>
+        <a href="#consultar-producao" class="active" >Apontamento</a>
       </nav>
       <div class="user-icon">
         <img src="images/circle-user.png" alt="User Icon" />
@@ -33,24 +35,14 @@
       >
       Inserir apontamento
       </h1>
-      <div class="container">
-        <div class="sidebar" id="mySidebar">
-          <button class="closebtn" onclick="closeNav()">×</button>
-          <ul>
-              <li><a href="./relatorio_atual.html" class="active" >Gerar Relatorio</a></li>
-              <li><a href="./visualizacao_atual.html">Vizualizar Relatorios</a></li>
-          </ul>
-          
-      </div>
-      <button class="openbtn" onclick="openNav()"> ☰ </button>
-    </header>
+      
     
     <nav>
       
         <div class="content">
           <div class="form-container">
             <form 
-            action="RecuperarDadosServlet?operacao=gerarRelatorio"
+            action="http://localhost:8080/production"
             method="post"
           >
               <label for="planQantity">Quantidade Planejada</label>
@@ -79,7 +71,7 @@
               <input type="text" id="bestBefore" name="bestBefore"><br>
               <label for="notes">Observações:</label>
               <input type="text" id="notes" name="notes"><br>
-              <button type="button">GERAR</button>
+              <button type="button">Inserir</button>
           </div>
     </nav>
     <script src="script/script.js"></script>

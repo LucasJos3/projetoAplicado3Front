@@ -311,3 +311,29 @@ nav.gerar_relatorio ul li a:hover {
 .show {
   display: block;
 }
+
+/*ESTILIZAÇÃO DOS DADOS*/
+
+#product-container {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.product {
+  margin-bottom: 10px;
+}
+
+.product h2 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.product p {
+  margin: 5px 0;
+  color: #666;
+}

@@ -28,3 +28,25 @@ function logout() {
   // Implementar a lógica de logout aqui
   alert("Logout realizado!");
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("http://localhost:8080/product")
+    .then((response) => response.json())
+    .then((data) => {
+      const productContainer = document.getElementById("product-container");
+      const productDiv = document.createElement("div");
+      productDiv.classList.add("product");
+
+      const productName = document.createElement("h2");
+      productName.textContent = data.name;
+
+      const productDescription = document.createElement("p");
+      productDescription.textContent = data.description;
+
+      productDiv.appendChild(productName);
+      productDiv.appendChild(productDescription);
+
+      productContainer.appendChild(productDiv);
+    })
+    .catch((error) => console.error("Error fetching product data:", error));
+});
