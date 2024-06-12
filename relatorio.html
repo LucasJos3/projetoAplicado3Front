@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
   <head>
     <meta charset="ISO-8859-1" />
-    <title>RELATÓRIO</title>
+    <title>RELATÓRIO ATUAL</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
@@ -16,33 +17,72 @@
       /></a>
       <nav>
         <a href="./relatorio.html" class="active">Relatorio</a>
-        <a href="./gerenciar_produto.html">Gerenciamento de Produtos</a>
-        <a href="#consultar-producao">Consultar Produção</a>
+        <a href="./gerenciar_produto.html">Gerenciamento de Produto</a>
+        <a href="./apontamento.html">Apontamento</a>
       </nav>
       <div class="user-icon">
         <img src="images/circle-user.png" alt="User Icon" />
       </div>
     </div>
-
+    <header>
+      <h1
+        style="
+          color:  #333;
+          font-size: 30px;
+          font-weight: bold;
+          align-items: center;
+        "
+      >
+        Relatório Atual
+      </h1>
+      <div class="container">
+        <div class="sidebar" id="mySidebar">
+          <button class="closebtn" onclick="closeNav()">×</button>
+          <ul>
+              <li><a href="./relatorio_atual.html" class="active" >Gerar Relatorio</a></li>
+              
+          </ul>
+          
+      </div>
+      <button class="openbtn" onclick="openNav()"> ☰ </button>
+    </header>
     
-      <ul>
-  
-        <h2>Gerenciamento de Relatorios</h2>
-      </ul>
    
-    <div class="container">
-      <div class="sidebar" id="mySidebar">
-        <button class="closebtn" onclick="closeNav()">×</button>
-        <ul>
-            <li><a href="./relatorio_atual.html">Gerar Relatorio</a></li>
-            <li><a href="#">Vizualizar Relatorios</a></li>
-        </ul>
-        
-    </div>
-    <button class="openbtn" onclick="openNav()"> ☰ </button>
-    <p id="time"></p>
+    <div class="content">
+      <div class="form-container">
+        <form 
+        action="RecuperarDadosServlet?operacao=gerarRelatorio"
+        method="post"
+      >
+          <label for="id"> Gerar Relatorio</label>
+          
+          
+          <button type="button">GERAR</button>
+      </div>
+      <br>
 
-    <script src="script/script.js"></script>
+        <div class="content">
+          <div class="form-container">
+            <form 
+            action="RecuperarDadosServlet?operacao=gerarRelatorio"
+            method="post"
+          >
+              <label for="lote">Gerar por ID:</label>
+              <input type="text" id="lote" name="lote"><br>
+              
+              <button type="button">GERAR</button>
+          </div>
+
+          <br>
+  
+  
+      
     
+
+        
+
+
+    
+    <script src="script/script.js"></script>
   </body>
 </html>
