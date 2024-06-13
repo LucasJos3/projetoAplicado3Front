@@ -46,16 +46,22 @@
       </div>
       <button class="openbtn" onclick="openNav()"> ☰ </button>
     </header>
-    <form action="Inserir link para exclusão" method="DELETE">
-      <div class="form-group">
-        <label for="ID">Identificador</label>
-        <input type="text" name="nome" required />
-      </div>
-
-      
-
-      <input type="submit" value="excluir" />
-    </form>
+  
+    <div id="product-container">
+      <table id="product-table">
+          <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>Nome</th>
+                  <th>Descrição</th>
+                  <th>Ações</th>
+              </tr>
+          </thead>
+          <tbody>
+              <!-- Dados serão inseridos aqui -->
+          </tbody>
+      </table>
+  </div>
     <script src="script/script.js"></script>
   </body>
 </html>
