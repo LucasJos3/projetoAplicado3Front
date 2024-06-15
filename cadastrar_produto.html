@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <meta charset="ISO-8859-1" />
+    <meta charset="UTF-8">
     <title>CADASTRAR PRODUTO</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link
@@ -54,17 +54,74 @@
       method="POST"
     >
       <div class="form-group">
-        <label for="nome">Nome</label>
-        <input type="text" name="nome" required />
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="name" required />
       </div>
 
       <div class="form-group">
         <label for="description">Descrição</label>
-       <input type="text" required/>
+       <input type="text" id="description" name="description" required/>
       </div>
 
       <input type="submit" value="cadastrar" />
     </form>
     <script src="script/script.js"></script>
   </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>CADASTRAR PRODUTO</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="header">
+    <a href="./admin.html">
+      <img src="./images/logo.png" alt="Logo" class="logo" />
+    </a>
+    <nav>
+      <a href="./relatorio.html">Relatorio</a>
+      <a href="gerenciar_produto.html" class="active">Gerenciamento de Produto</a>
+      <a href="./apontamento.html">Apontamento</a>
+    </nav>
+    <div class="user-icon">
+      <img src="images/circle-user.png" alt="User Icon" />
+    </div>
+  </div>
+
+  <header>
+    <h1 style="color: #333; font-size: 30px; font-weight: bold; align-items: center;">
+      Cadastrar Produto
+    </h1>
+    <div class="container">
+      <div class="sidebar" id="mySidebar">
+        <button class="closebtn" onclick="closeNav()">×</button>
+        <ul>
+          <li><a href="./cadastrar_produto.html">Cadastrar Produtos</a></li>
+          <li><a href="./atualizar_produto.html">Atualizar Produtos</a></li>
+          <li><a href="./excluir_produto.html">Excluir Produtos</a></li>
+        </ul>
+      </div>
+      <button class="openbtn" onclick="openNav()"> ☰ </button>
+    </div>
+  </header>
+
+  <form id="product-form">
+    <div class="form-group">
+      <label for="name">Nome</label>
+      <input type="text" id="name" name="name" required />
+    </div>
+    <div class="form-group">
+      <label for="description">Descrição</label>
+      <input type="text" id="description" name="description" required />
+    </div>
+    <input type="submit" value="cadastrar" />
+  </form>
+
+  <script src="script/script.js"></script>
+</body>
 </html>
+
