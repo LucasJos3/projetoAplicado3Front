@@ -41,39 +41,32 @@
       
         <div class="content">
           <div class="form-container">
-            <form 
-            action="http://localhost:8080/production"
-            method="post"
-          >
-              <label for="planQantity">Quantidade Planejada</label>
-              <input type="text" id="planQantity" name="planQantity"><br>
+            <form id="production-form">
+              <label for="planQantity" >Quantidade Planejada</label>
+              <input type="float" id="planQantity" name="planQantity" required><br>
               <label for="realQantity">Quantidade Real</label>
-              <input type="text" id="realQantity" name="realQantity"><br>
+              <input type="float" id="realQantity" name="realQantity"><br>
               <label for="unit">Unidade :</label>
-              <input type="text" id="unit" name="unit"><br>
+              <input type="text" id="unit" name="unit" required><br>
               <label for="startTime">Inicio de produção:</label>
-              <input type="text" id="startTime" name="startTime"><br>
+              <input type="datetime-local" id="startTime" name="startTime"><br>
               <label for="finishTime">Fim de produção:</label>
-              <input type="text" id="finishTime" name="finishTime"><br>
+              <input type="datetime-local" id="finishTime" name="finishTime"><br>
               <label for="downTime">Tempo de parada:</label>
-              <input type="text" id="finishTime" name="finishTime"><br>
+              <input type="datetime-local" id="finishTime" name="finishTime"><br>
               <label for="packgeType">Embalagem:</label>
-              <input type="text" id="packgeType" name="packgeType"><br>
+              <input type="text" id="packgeType" name="packgeType" required><br>
               <label for="labelType">Tipo de etiqueta:</label>
               <input type="text" id="labelType" name="labelType"><br>
               <label for="equipment">Maquina:</label>
-              <input type="text" id="equipment" name="equipment"><br>
-              <label for="workShift">Turno:</label>
-              <input type="text" id="workShift" name="workShift"><br>
-              <label for="productionBatch">LOTE:</label>
-              <input type="text" id="productionBatch" name="productionBatch"><br>
+              <input type="text" id="equipment" name="equipment" required><br>         
               <label for="bestBefore">Data de validade:</label>
-              <input type="text" id="bestBefore" name="bestBefore"><br>
+              <input type="date" id="bestBefore" name="bestBefore" required><br>
               <label for="notes">Observações:</label>
               <input type="text" id="notes" name="notes"><br>
-              <button type="button">Inserir</button>
+              <button type="submit">Inserir</button>
           </div>
     </nav>
-    <script src="script/script.js"></script>
+    <script src="script/scriptApontamento.js"></script>
   </body>
 </html>

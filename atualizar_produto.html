@@ -46,19 +46,21 @@
       </div>
       <button class="openbtn" onclick="openNav()"> ☰ </button>
     </header>
-    <form action="Inserir link para exclusão" method="POST">
+    <form id="updateProductForm">
       <div class="form-group">
-        <label for="nome">Nome</label>
-        <input type="text" name="nome" required />
+        <label for="product-id">Identificador</label>
+        <input type="number" id="product-id" name="product-id" required>
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="name" required />
       </div>
 
       <div class="form-group">
         <label for="description">Descrição</label>
-       <input type="text" required/>
+       <input type="text" id="description" name="description" required/>
       </div>
 
-      <input type="submit" value="ATUALIZAR" />
+      <button type="submit">ATUALIZAR</button>
     </form>
-    <script src="./script/script.js"></script>
+    <script src="./script/scriptATT.js"></script>
   </body>
 </html>

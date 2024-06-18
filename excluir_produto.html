@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <meta charset="ISO-8859-1" />
+    <meta charset="utf-8" />
     <title>EXCLUIR PRODUTO</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link
@@ -25,12 +25,11 @@
     </div>
     <header>
       <h1
-        style="
-          color: #333;
+        style=
+          "color: #333;
           font-size: 30px;
           font-weight: bold;
-          align-items: center;
-        "
+          align-items: center;"
       >
         Excluir Produto
       </h1>
@@ -41,27 +40,18 @@
               <li><a href="./cadastrar_produto.html">Cadastrar Produtos</a></li>
               <li><a href="./atualizar_produto.html">Atualizar Produtos</a></li>
               <li><a href="./excluir_produto.html">Excluir Produtos</a></li>
+              <li><a href="./exibir_produtos.html">Produtos</a></li>
           </ul>
           
       </div>
       <button class="openbtn" onclick="openNav()"> ☰ </button>
     </header>
-  
-    <div id="product-container">
-      <table id="product-table">
-          <thead>
-              <tr>
-                  <th>ID</th>
-                  <th>Nome</th>
-                  <th>Descrição</th>
-                  <th>Ações</th>
-              </tr>
-          </thead>
-          <tbody>
-              <!-- Dados serão inseridos aqui -->
-          </tbody>
-      </table>
-  </div>
-    <script src="script/script.js"></script>
+
+    <form id="product-form" onsubmit="deleteProduct(event)">
+      <label for="product-id">ID do Produto:</label>
+      <input type="number" id="product-id" name="product-id">
+      <button type="submit">Deletar Produto</button>
+  </form>
+    <script src="script/scriptExcluir.js"></script>
   </body>
 </html>

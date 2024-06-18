@@ -205,6 +205,12 @@ form select {
   border: none;
   border-radius: 10px;
 }
+form input[type="number"],
+form select {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+}
 form input[type="password"],
 form select {
   padding: 10px;
