@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="ISO-8859-1" />
+    <meta charset="UTF-8" />
     <title>Inserir apontamento</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link
@@ -42,20 +42,20 @@
         <div class="content">
           <div class="form-container">
             <form id="production-form">
-              <label for="planQantity" >Quantidade Planejada</label>
-              <input type="float" id="planQantity" name="planQantity" required><br>
-              <label for="realQantity">Quantidade Real</label>
-              <input type="float" id="realQantity" name="realQantity"><br>
+              <label for="planQuantity" >Quantidade Planejada</label>
+              <input type="float" id="planQuantity" name="planQuantity" required><br>
+              <label for="realQuantity">Quantidade Real</label>
+              <input type="float" id="realQuantity" name="realQantity"><br>
               <label for="unit">Unidade :</label>
               <input type="text" id="unit" name="unit" required><br>
               <label for="startTime">Inicio de produção:</label>
               <input type="datetime-local" id="startTime" name="startTime"><br>
               <label for="finishTime">Fim de produção:</label>
               <input type="datetime-local" id="finishTime" name="finishTime"><br>
-              <label for="downTime">Tempo de parada:</label>
-              <input type="datetime-local" id="finishTime" name="finishTime"><br>
-              <label for="packgeType">Embalagem:</label>
-              <input type="text" id="packgeType" name="packgeType" required><br>
+              <label for="downtime">Tempo de parada:</label>
+              <input type="datetime-local" id="downtime" name="downtime"><br>
+              <label for="packageType">Embalagem:</label>
+              <input type="text" id="packageType" name="packageType" required><br>
               <label for="labelType">Tipo de etiqueta:</label>
               <input type="text" id="labelType" name="labelType"><br>
               <label for="equipment">Maquina:</label>
@@ -70,3 +70,101 @@
     <script src="script/scriptApontamento.js"></script>
   </body>
 </html>
+
+
+<!--
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Inserir apontamento</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <a href="./admin.html">
+        <img src="./images/logo.png" alt="Logo" class="logo"
+      /></a>
+      <nav>
+        <a href="./relatorio.html" ">Relatorio</a>
+        <a href="./gerenciar_produto.html">Gerenciamento de Produto</a>
+        <a href="./apontamento.html" class="active" >Apontamento</a>
+      </nav>
+      <div class="user-icon">
+        <img src="images/circle-user.png" alt="User Icon" />
+      </div>
+    </div>
+    <header>
+      <h1
+        style="
+          color:  #333;
+          font-size: 30px;
+          font-weight: bold;
+          align-items: center;
+        "
+      >
+      Inserir apontamento
+      </h1>
+      
+    </header>
+
+
+    <form id="production-form">
+      <div class="form-group">
+        <label for="planQuantity" >Quantidade Planejada</label>
+        <input type="text" id="planQuantity" name="planQuantity" required>
+      </div>
+      <div class="form-group">
+        <label for="realQuantity">Quantidade Real</label>
+        <input type="text" id="realQuantity" name="realQantity">
+      </div>
+      <div class="form-group">
+        <label for="unit">Unidade :</label>
+        <input type="text" id="unit" name="unit" required>
+      </div>
+      <div class="form-group">
+        <label for="startTime">Inicio de produção:</label>
+        <input type="text" id="startTime" name="startTime">
+      </div>
+      <div class="form-group">
+        <label for="finishTime">Fim de produção:</label>
+        <input type="text" id="finishTime" name="finishTime">
+      </div>
+      <div class="form-group">
+        <label for="downtime">Tempo de parada:</label>
+        <input type="text" id="downtime" name="downtime">
+      </div>
+      <div class="form-group">
+        <label for="packageType">Embalagem:</label>
+        <input type="text" id="packageType" name="packageType" required>
+      </div>
+      <div class="form-group">
+        <label for="labelType">Tipo de etiqueta:</label>
+        <input type="text" id="labelType" name="labelType">
+      </div>
+      <div class="form-group">
+        <label for="equipment">Maquina:</label>
+        <input type="text" id="equipment" name="equipment" required>
+      </div>
+      <div class="form-group">
+        <label for="bestBefore">Data de validade:</label>
+        <input type="text" id="bestBefore" name="bestBefore" required>
+      </div>
+      <div class="form-group">
+        <label for="notes">Observações:</label>
+        <input type="text" id="notes" name="notes">
+      </div>
+      <button type="submit">Inserir</button>
+    </form>
+      
+    
+      
+
+    <script src="script/scriptApontamento.js"></script>
+  </body>
+</html>
+-->
