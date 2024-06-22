@@ -1,3 +1,4 @@
+/*
 function openNav() {
   document.getElementById("mySidebar").style.width = "250px";
   document.getElementById("main").style.marginLeft = "250px";
@@ -29,6 +30,8 @@ function logout() {
   alert("Logout realizado!");
 }
 
+*/
+
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("production-form");
   let submitting = false;
@@ -44,20 +47,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const formData = new FormData(form);
 
-    fetch(`http://localhost:8080/production`, {
-      method: "POST",
+    fetch("http://localhost:8080/production", {
+      method: 'POST',
+      body: JSON.stringify(Object.fromEntries(formData)),
       headers: {
-        "Content-Type": "application/json;application/x-www-form-urlencoded",
-      },
-      body: new URLSearchParams(formData),
+        'Content-Type': 'application/json'
+      }
     })
       .then((response) => {
         submitting = false;
 
         if (!response.ok) {
-          throw new Error("Erro ao cadastrar produto: " + response.statusText);
+          throw new Error("Não foi possível cadastrar Apontamento: " + response.statusText);
         }
-        alert("Produto cadastrado com sucesso!");
+        alert("Apontamento cadastrado com sucesso!");
         return response.json(); // Retorna os dados do backend como JSON
       })
       .then((data) => {
@@ -66,7 +69,8 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .catch((error) => {
         submitting = false;
-        alert("Erro ao cadastrar produto: " + error.message);
+        alert("Erro ao cadastrar Apontamento: " + error.message);
+        form.reset();
       });
   });
 });
