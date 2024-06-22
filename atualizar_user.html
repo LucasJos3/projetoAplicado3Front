@@ -30,7 +30,7 @@
           align-items: center;
         "
       >
-        Cadastrar Usuario
+        Atualizar Usuario
       </h1>
       <div class="container">
         <div class="sidebar" id="mySidebar">
@@ -46,20 +46,25 @@
       <button class="openbtn" onclick="openNav()"> ☰ </button>
     </header>
     <!-- A ação do formulário deve ser preferencialmente em HTTPS -->
-    <form id="form-cadastro">
-      <label for="name">Nome</label>
-      <input type="text" id="name" name="name" required />
+    <form id="updateUserForm">
+      
+        <label for="user-id">Identificador</label>
+        <input type="number" id="user-id" name="user-id" required>
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="name" required />
+      
 
-      <label for="position">Posição</label>
-      <input type="text" id="position" name="position" required />
+      
+        <label for="description">Posição</label>
+       <input type="text" id="position" name="position" required/>
+      
+       <label>Tipo</label>
+       <input type="text" id="type" name="type" required />
 
-      <label>Tipo</label>
-      <input type="text" id="type" name="type" required />
-
-      <button type="submit">Ok</button>
+      <button type="submit">ATUALIZAR</button>
     </form>
 
     <p id="time"></p>
-    <script src="script/scriptUsuario.js"></script>
+    <script src="script/scriptAttUser.js"></script>
   </body>
 </html>
