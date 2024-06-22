@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Inserir apontamento</title>
+    <title>Gerenciar apontamento</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
@@ -16,9 +16,9 @@
         <img src="./images/logo.png" alt="Logo" class="logo"
       /></a>
       <nav>
-        <a href="./relatorio.html" ">Relatorio</a>
-        <a href="./gerenciar_produto.html">Gerenciamento de Produto</a>
-        <a href="./apontamento.html" class="active" >Apontamento</a>
+        <a href="./cadastro.html">Gerenciar Usuarios</a>
+        <a href="./cadastrar_produto.html">Gerenciar Produtos</a>
+        <a href="./apontamento.html" class="active" >Gerenciar Apontamento</a>
       </nav>
       <div class="user-icon">
         <img src="images/circle-user.png" alt="User Icon" />
@@ -35,33 +35,37 @@
       >
       Inserir apontamento
       </h1>
-      
-    
+      <div class="container">
+        <div class="sidebar" id="mySidebar">
+          <button class="closebtn" onclick="closeNav()">×</button>
+          <ul>
+            <li><a href="./relatorio.html">Gerar Relatorio</a></li>
+            <li><a href="./atualiza_apontamento.html">Atualizar Apontamento</a></li>
+          </ul>
+        </div>
+        <button class="openbtn" onclick="openNav()"> ☰ </button>
+    </header>
     <nav>
       
         <div class="content">
           <div class="form-container">
             <form id="production-form">
               <label for="planQuantity" >Quantidade Planejada</label>
-              <input type="float" id="planQuantity" name="planQuantity" required><br>
+              <input type="float" id="planQuantity" name="planQuantity"><br>
               <label for="realQuantity">Quantidade Real</label>
               <input type="float" id="realQuantity" name="realQuantity"><br>
               <label for="unit">Unidade :</label>
-              <input type="text" id="unit" name="unit" required><br>
-              <label for="startTime">Inicio de produção:</label>
-              <input type="datetime-local" id="startTime" name="startTime"><br>
+              <input type="text" id="unit" name="unit"><br>
               <label for="finishTime">Fim de produção:</label>
               <input type="datetime-local" id="finishTime" name="finishTime"><br>
               <label for="downtime">Tempo de parada:</label>
               <input type="datetime-local" id="downtime" name="downtime"><br>
               <label for="packageType">Embalagem:</label>
-              <input type="text" id="packageType" name="packageType" required><br>
+              <input type="text" id="packageType" name="packageType"><br>
               <label for="labelType">Tipo de etiqueta:</label>
-              <input type="text" id="labelType" name="labelType"><br>
-              <label for="equipment">Maquina:</label>
-              <input type="text" id="equipment" name="equipment" required><br>         
+              <input type="text" id="labelType" name="labelType"><br>         
               <label for="bestBefore">Data de validade:</label>
-              <input type="date" id="bestBefore" name="bestBefore" required><br>
+              <input type="date" id="bestBefore" name="bestBefore"><br>
               <label for="notes">Observações:</label>
               <input type="text" id="notes" name="notes"><br>
               <button type="submit">Inserir</button>

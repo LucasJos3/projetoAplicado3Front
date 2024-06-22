@@ -62,14 +62,14 @@ nav a:hover {
 
 .form-container label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: px;
   font-weight: bold;
 }
 
 .form-container input {
   width: calc(100% - 20px);
-  padding: 5px 10px;
-  margin-bottom: 15px;
+  padding: 5px 5px;
+  margin-bottom: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }

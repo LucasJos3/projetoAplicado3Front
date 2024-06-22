@@ -12,10 +12,14 @@
 
   <body>
     <div class="header">
-      <a href="./index.html">
+      <a href="./admin.html">
         <img src="./images/logo.png" alt="Logo" class="logo"
       /></a>
-
+      <nav>
+        <a href="./cadastro.html" class="active">Gerenciar Usuarios</a>
+        <a href="./cadastrar_produto.html">Gerenciar Produtos</a>
+        <a href="./apontamento.html">Gerenciar Apontamento</a>
+      </nav>
       <div class="user-icon">
         <img src="images/circle-user.png" alt="User Icon" />
       </div>
@@ -37,7 +41,7 @@
           <button class="closebtn" onclick="closeNav()">×</button>
           <ul>
               <li><a href="./cadastro.html">Cadastrar Usuario</a></li>
-              <li><a href="./atualizar_usuario.html">Atualizar Usuario</a></li>
+              <li><a href="./atualizar_user.html">Atualizar Usuario</a></li>
               <li><a href="./excluirUser.html">Excluir Usuario</a></li>
               
           </ul>
@@ -51,14 +55,14 @@
         <label for="user-id">Identificador</label>
         <input type="number" id="user-id" name="user-id" required>
         <label for="name">Nome</label>
-        <input type="text" id="name" name="name" required />
+        <input type="text" id="name" name="name" required autocomplete="name"/>
       
 
       
-        <label for="description">Posição</label>
+        <label for="position" >Posição</label>
        <input type="text" id="position" name="position" required/>
       
-       <label>Tipo</label>
+       <label for="type">Tipo</label>
        <input type="text" id="type" name="type" required />
 
       <button type="submit">ATUALIZAR</button>
