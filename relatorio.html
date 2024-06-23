@@ -1,85 +1,73 @@
-
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>RELATÓRIO ATUAL</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="header">
-      <a href="./admin.html">
-        <img src="./images/logo.png" alt="Logo" class="logo"
-      /></a>
-      <nav>
-        <a href="./cadastro.html">Gerenciar Usuarios</a>
-        <a href="./gerenciar_produto.html">Gerenciamento de Produto</a>
-        <a href="./apontamento.html">Apontamento</a>
-      </nav>
-      <div class="user-icon">
-        <img src="images/circle-user.png" alt="User Icon" />
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Relatório</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="header">
+    <a href="./admin.html">
+      <img src="./images/logo.png" alt="Logo" class="logo" /></a>
+    <nav>
+      <a href="./cadastro.html">Gerenciar Usuarios</a>
+      <a href="./cadastrar_produto.html">Gerenciar Produtos</a>
+      <a href="./apontamento.html">Gerenciar Apontamentos</a>
+    </nav>
+    <div class="user-icon">
+      <img src="images/circle-user.png" alt="User Icon" />
     </div>
-    <header>
-      <h1
-        style="
+  </div>
+  <header>
+    <h1 style="
           color:  #333;
           font-size: 30px;
           font-weight: bold;
           align-items: center;
-        "
-      >
-        Relatório Atual
-      </h1>
-      <div class="container">
-        <div class="sidebar" id="mySidebar">
-          <button class="closebtn" onclick="closeNav()">×</button>
-          <ul>
-              <li><a href="./relatorio_atual.html" class="active" >Gerar Relatorio</a></li>
-              
-          </ul>
-          
+        ">
+      Relatório Atual
+    </h1>
+    <div class="container">
+      <div class="sidebar" id="mySidebar">
+        <button class="closebtn" onclick="closeNav()">×</button>
+        <ul>
+          <li><a href="./atualiza_apontamento.html">Atualizar Apontamento</a></li>
+          <li><a href="./cadastrar_apontamento.html">Cadastrar Apontamento</a></li>
+        </ul>
+
       </div>
       <button class="openbtn" onclick="openNav()"> ☰ </button>
-    </header>
-    
-   
-    <div class="content">
-      <div class="form-container">
-        <form id="reportForm">
-          <label for="id"> Gerar Relatorio</label>
-          
-          
-          <button type="submit">GERAR</button>
-      </div>
-      <br>
-
-        <div class="content">
-          <div class="form-container">
-            <form 
-            action="RecuperarDadosServlet?operacao=gerarRelatorio"
-            method="get"
-          >
-              <label for="lote">Gerar por ID:</label>
-              <input type="text" id="lote" name="lote"><br>
-              
-              <button type="button">GERAR</button>
-          </div>
-
-          <br>
-  
-  
-      
-    
-
-        
+  </header>
 
 
-    
-    <script src="script/script.js"></script>
-  </body>
+  <div class="content">
+    <div class="form-container">
+      <form id="report-form-complet">
+        <p>Gerar Relatorio Completo</p>
+
+        <button type="submit">GERAR</button>
+      </form>
+    </div>
+    <br>
+  </div>
+
+  <div class="content">
+    <div class="form-container">
+      <form id="report-form-id">
+        <label for="report-form-id">Gerar Relatório por ID:</label>
+        <input type="text" id="report-form-id" name="report-form-id"><br>
+
+        <button type="submit">GERAR</button>
+      </form>
+    </div>
+  </div>
+
+
+  <br>
+  <script src="script/script.js"></script>
+</body>
+
 </html>

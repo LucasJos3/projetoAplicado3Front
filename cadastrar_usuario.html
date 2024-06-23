@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Gerenciar Usuarios</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="header">
+    <a href="./admin.html">
+      <img src="./images/logo.png" alt="Logo" class="logo" /></a>
+
+    <nav>
+      <a href="./cadastrar_usuario.html" class="active">Gerenciar Usuarios</a>
+      <a href="./cadastrar_produto.html">Gerenciar Produtos</a>
+      <a href="./cadastrar_apontamento.html">Gerenciar Apontamento</a>
+    </nav>
+    <div class="user-icon">
+      <img src="images/circle-user.png" alt="User Icon" />
+    </div>
+  </div>
+
+  <header>
+    <h1 style="
+          color: #333;
+          font-size: 30px;
+          font-weight: bold;
+          align-items: center;
+        ">
+      Cadastrar Usuario
+    </h1>
+    <div class="container">
+      <div class="sidebar" id="mySidebar">
+        <button class="closebtn" onclick="closeNav()">×</button>
+        <ul>          
+          <li><a href="./atualizar_usuario.html">Atualizar Usuario</a></li>
+          <li><a href="./excluir_usuario.html">Excluir Usuario</a></li>
+        </ul>
+
+      </div>
+      <button class="openbtn" onclick="openNav()"> ☰ </button>
+  </header>
+  <!-- A ação do formulário deve ser preferencialmente em HTTPS -->
+  <div class="form-container">
+    <form id="form-cadastro">
+      <label for="name">Nome</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="position">Posição</label>
+      <input type="text" id="position" name="position" required />
+
+      <label>Tipo</label>
+      <select name="type" id="type" required>
+        <option disabled selected> - Selecione - </option>
+        <option value="Administrador">Administrador</option>
+        <option value="Operador">Operador</option>
+      </select>      
+
+      <button type="submit">CADASTRAR</button>
+    </form>
+  </div>
+
+  <p id="time"></p>
+  <script src="script/script_usuario.js"></script>
+</body>
+
+</html>

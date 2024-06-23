@@ -1,66 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <title>ATUALIZAR PRODUTO</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="header">
-      <a href="./admin.html">
-        <img src="./images/logo.png" alt="Logo" class="logo"
-      /></a>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Atualizar Produto</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="header">
+    <a href="./admin.html">
+      <img src="./images/logo.png" alt="Logo" class="logo" /></a>
       <nav>
-        
-        <a href="gerenciar_produto.html" class="active">Gerenciar Produtos</a>
-        <a href="apontamento.html">Gerenciar Apontamento</a>
+        <a href="./cadastrar_usuario.html">Gerenciar Usuarios</a>
+        <a href="./cadastrar_produto.html" class="active">Gerenciar Produtos</a>
+        <a href="./cadastrar_apontamento.html">Gerenciar Apontamento</a>
       </nav>
-      <div class="user-icon">
-        <img src="images/circle-user.png" alt="User Icon" />
-      </div>
+    <div class="user-icon">
+      <img src="images/circle-user.png" alt="User Icon" />
     </div>
-    <header>
-      <h1
-        style="
+  </div>
+  <header>
+    <h1 style="
           color: #333;
           font-size: 30px;
           font-weight: bold;
           align-items: center;
-        "
-      >
-        Atualizar Produto
-      </h1>
-      <div class="container">
-        <div class="sidebar" id="mySidebar">
-          <button class="closebtn" onclick="closeNav()">×</button>
-          <ul>
-              
-              <li><a href="./atualizar_produto.html">Atualizar Produtos</a></li>
-              <li><a href="./excluir_produto.html">Excluir Produtos</a></li>
-          </ul>
-          
+        ">
+      Atualizar Produto
+    </h1>
+    <div class="container">
+      <div class="sidebar" id="mySidebar">
+        <button class="closebtn" onclick="closeNav()">×</button>
+        <ul>
+
+          <li><a href="./cadastrar_produto.html">Cadastrar Produtos</a></li>
+          <li><a href="./excluir_produto.html">Excluir Produtos</a></li>
+        </ul>
+
       </div>
       <button class="openbtn" onclick="openNav()"> ☰ </button>
-    </header>
+  </header>
+  <div class="form-container">
     <form id="updateProductForm">
       <div class="form-group">
         <label for="product-id">Identificador</label>
         <input type="number" id="product-id" name="product-id" required>
         <label for="name">Nome</label>
-        <input type="text" id="name" name="name" required />
-      </div>
-
-      <div class="form-group">
+        <input type="text" id="name" name="name" required/>     
         <label for="description">Descrição</label>
-       <input type="text" id="description" name="description" required/>
+        <input type="text" id="description" name="description" required />
       </div>
+     
 
       <button type="submit">ATUALIZAR</button>
     </form>
-    <script src="./script/scriptATT.js"></script>
-  </body>
+  </div>
+  <script src="./script/script_produto.js"></script>
+</body>
+
 </html>

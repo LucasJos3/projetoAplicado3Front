@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Excluir Produto</title>
+  <title>Excluir Usuario</title>
   <link rel="stylesheet" type="text/css" href="css/styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 </head>
@@ -12,11 +12,11 @@
   <div class="header">
     <a href="./admin.html">
       <img src="./images/logo.png" alt="Logo" class="logo" /></a>
-      <nav>
-        <a href="./cadastrar_usuario.html">Gerenciar Usuarios</a>
-        <a href="./cadastrar_produto.html" class="active">Gerenciar Produtos</a>
-        <a href="./cadastrar_apontamento.html">Gerenciar Apontamento</a>
-      </nav>
+    <nav>
+      <a href="./cadastrar_usuario.html" class="active">Gerenciar Usuarios</a>
+      <a href="./cadastrar_produto.html">Gerenciar Produtos</a>
+      <a href="./cadastrar_apontamento.html">Gerenciar Apontamento</a>
+    </nav>
     <div class="user-icon">
       <img src="images/circle-user.png" alt="User Icon" />
     </div>
@@ -26,14 +26,14 @@
           font-size: 30px;
           font-weight: bold;
           align-items: center;">
-      Excluir Produto
+      Excluir Usuario
     </h1>
     <div class="container">
       <div class="sidebar" id="mySidebar">
         <button class="closebtn" onclick="closeNav()">×</button>
         <ul>
-          <li><a href="./atualizar_produto.html">Atualizar Produtos</a></li>
-          <li><a href="./cadastrar_produto.html">Cadastrar Produtos</a></li>          
+          <li><a href="./cadastrar_usuario.html">Cadastrar Usuario</a></li>
+          <li><a href="./atualizar_user.html">Atualizar Usuario</a></li>
         </ul>
 
       </div>
@@ -41,13 +41,14 @@
   </header>
 
   <div class="form-container">
-    <form id="product-form-delete" onsubmit="deleteProduct(event)">
-      <label for="product-id">ID do Produto:</label>
-      <input type="number" id="product-id" name="product-id">
-      <button type="submit">EXCLUIR</button>
+    <form id="product-form" onsubmit="deleteProduct(event)">
+      <label for="user-id">ID do Usuario:</label>
+      <input type="number" id="user-id" name="user-id">
+      <button type="submit">DELETAR</button>
     </form>
   </div>
-  <script src="script/script_produto.js"></script>
+</body>
+<script src="script/script_usuario.js"></script>
 </body>
 
 </html>

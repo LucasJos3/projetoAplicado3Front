@@ -15,9 +15,9 @@
         <img src="./images/logo.png" alt="Logo" class="logo" />
       </a>
       <nav>
-        <a href="./cadastro.html">Gerenciar Usuarios</a>
-        <a href="cadastrar_produto.html" class="active">Gerenciar Produtos</a>
-        <a href="./apontamento.html">Gerenciar Apontamento</a>
+        <a href="./cadastrar_usuario.html">Gerenciar Usuarios</a>
+        <a href="./cadastrar_produto.html" class="active">Gerenciar Produtos</a>
+        <a href="./cadastrar_apontamento.html">Gerenciar Apontamento</a>
       </nav>
       <div class="user-icon">
         <img src="images/circle-user.png" alt="User Icon" />
@@ -47,6 +47,7 @@
       </div>
     </header>
 
+    <div class="form-container">
     <form id="product-form">
       <div class="form-group">
         <label for="name">Nome</label>
@@ -56,9 +57,10 @@
         <label for="description">Descrição</label>
         <input type="text" id="description" name="description" required />
       </div>
-      <input type="submit" value="cadastrar" />
+      <button type="submit" value="cadastrar">CADASTRAR</button>
     </form>
+  </div>
 
-    <script src="script/script.js"></script>
+    <script src="script/script_produto.js"></script>
   </body>
 </html>
