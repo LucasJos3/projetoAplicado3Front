@@ -1,3 +1,4 @@
+
 function openNav() {
   document.getElementById("mySidebar").style.width = "250px";
   document.getElementById("main").style.marginLeft = "250px";
@@ -29,6 +30,7 @@ function logout() {
   alert("Logout realizado!");
 }
 
+
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("production-form");
   let submitting = false;
@@ -45,19 +47,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const formData = new FormData(form);
 
     fetch("http://localhost:8080/production", {
-      method: "POST",
+      method: 'post',
       body: JSON.stringify(Object.fromEntries(formData)),
       headers: {
-        "Content-Type": "application/json",
-      },
+        'Content-Type': 'application/json;application/x-www-form-urlencoded'
+      }
     })
       .then((response) => {
         submitting = false;
 
         if (!response.ok) {
-          throw new Error(
-            "Não foi possível cadastrar Apontamento: " + response.statusText
-          );
+          throw new Error("Não foi possível cadastrar Apontamento: " + response.statusText);
         }
         alert("Apontamento cadastrado com sucesso!");
         return response.json(); // Retorna os dados do backend como JSON

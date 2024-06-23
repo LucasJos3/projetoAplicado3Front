@@ -149,211 +149,31 @@ function logout() {
 //   });
 // });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("product-form");
-  let submitting = false;
-
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    if (submitting) {
-      return;
-    }
-
-    submitting = true;
-
-    const formData = new FormData(form);
-
-    fetch("http://localhost:8080/product", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: new URLSearchParams(formData),
-    })
-      .then((response) => {
-        submitting = false;
-
-        if (!response.ok) {
-          throw new Error("Erro ao cadastrar produto: " + response.statusText);
-        }
-        alert("Produto cadastrado com sucesso!");
-        return response.json(); // Retorna os dados do backend como JSON
-      })
-      .then((data) => {
-        displayProductData(data); // Chama a função para exibir os dados
-        form.reset(); // Limpa os campos do formulário
-      })
-      .catch((error) => {
-        submitting = false;
-        alert("Erro ao cadastrar produto: " + error.message);
-      });
-  });
-
-  function displayProductData(data) {
-    const table = document.createElement("table");
-    const tbody = document.createElement("tbody");
-
-    // Cria linhas na tabela com as informações retornadas do backend
-    for (const key in data) {
-      if (data.hasOwnProperty(key)) {
-        const tr = document.createElement("tr");
-        const tdKey = document.createElement("td");
-        const tdValue = document.createElement("td");
-
-        tdKey.textContent = key;
-        tdValue.textContent = data[key];
-
-        tr.appendChild(tdKey);
-        tr.appendChild(tdValue);
-        tbody.appendChild(tr);
-      }
-    }
-
-    // Limpa a tabela existente, se houver
-    const existingTable = document.getElementById("product-data-table");
-    if (existingTable) {
-      existingTable.parentNode.removeChild(existingTable);
-    }
-
-    // Adiciona a nova tabela abaixo do formulário
-    table.appendChild(tbody);
-    table.setAttribute("id", "product-data-table");
-    form.parentNode.insertBefore(table, form.nextSibling);
-  }
-});
-
 //SCRIPT APONTAMENTO
 
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("reportForm");
-  let submitting = false;
+// document.addEventListener("DOMContentLoaded", function () {
+//   const form = document.getElementById("report-form-complet");  
 
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
+//   form.addEventListener("submit", function (event) {
 
-    if (submitting) {
-      return;
-    }
+//     const url = "http://localhost:8080/production";    
+    
+//     const pdfBlob = fetchPdf(url); // substitua pela URL do seu backend
+//     openPdf(pdfBlob);
+//   });   
+// });
 
-    submitting = true;
+// async function fetchPdf(url) {
+//   const response = fetch(url)
+//   const data = await response.blob(); // Recebe o PDF como um Blob
+//   return data;
+// }
 
-    fetch("http://localhost:8080/production", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded", // Tipo de conteúdo do corpo
-      },
-    })
-      .then((response) => {
-        submitting = false;
-
-        if (!response.ok) {
-          throw new Error(
-            "Erro ao recuperar o relatório de produção: " + response.statusText
-          );
-        }
-        // alert('Produto cadastrado com sucesso!');
-        return response.json(); // Retorna os dados do backend como JSON
-      })
-      .then((data) => {
-        displayProductData(data); // Chama a função para exibir os dados
-        form.reset(); // Limpa os campos do formulário
-      })
-      .catch((error) => {
-        submitting = false;
-        alert("Erro ao recuperar o relatório de produção: " + error.message);
-      });
-  });
-
-  function displayProductData(data) {
-    const table = document.createElement("table");
-    const tbody = document.createElement("tbody");
-    const thead = document.createElement("thead");
-
-    // Cria linhas na tabela com as informações retornadas do backend
-    for (key in data) {
-      if (data.hasOwnProperty(key)) {
-        const th = document.createElement("th");
-        const tr = document.createElement("tr");
-        const tdValue = document.createElement("td");
-        const tdValue1 = document.createElement("td");
-        const tdValue2 = document.createElement("td");
-        const tdValue3 = document.createElement("td");
-        const tdValue4 = document.createElement("td");
-        const tdValue5 = document.createElement("td");
-        const tdValue6 = document.createElement("td");
-        const tdValue7 = document.createElement("td");
-        const tdValue8 = document.createElement("td");
-        const tdValue9 = document.createElement("td");
-        const tdValue10 = document.createElement("td");
-        const tdValue11 = document.createElement("td");
-        const tdValue12 = document.createElement("td");
-        const tdValue13 = document.createElement("td");
-
-        let response = JSON.stringify(data[key]);
-
-        let objeto = {
-          idProduction: JSON.parse(response).idProduction,
-          planQuantity: JSON.parse(response).planQuantity,
-          realQuantity: JSON.parse(response).realQuantity,
-          unit: JSON.parse(response).unit,
-          startTime: JSON.parse(response).startTime,
-          finishTime: JSON.parse(response).finishTime,
-          downtime: JSON.parse(response).downtime,
-          packageType: JSON.parse(response).packageType,
-          labelType: JSON.parse(response).labelType,
-          equipment: JSON.parse(response).equipment,
-          workShift: JSON.parse(response).workShift,
-          productionBatch: JSON.parse(response).productionBatch,
-          bestBefore: JSON.parse(response).bestBefore,
-          notes: JSON.parse(response).notes,
-        };
-
-        tdValue.textContent = objeto.idProduction;
-        tdValue1.textContent = objeto.planQuantity;
-        tdValue2.textContent = objeto.realQuantity;
-        tdValue3.textContent = objeto.unit;
-        tdValue4.textContent = objeto.startTime;
-        tdValue5.textContent = objeto.finishTime;
-        tdValue6.textContent = objeto.downtime;
-        tdValue7.textContent = objeto.packageType;
-        tdValue8.textContent = objeto.labelType;
-        tdValue9.textContent = objeto.equipment;
-        tdValue10.textContent = objeto.workShift;
-        tdValue11.textContent = objeto.productionBatch;
-        tdValue12.textContent = objeto.bestBefore;
-        tdValue13.textContent = objeto.notes;
-
-        tr.appendChild(tdValue);
-        tr.appendChild(tdValue1);
-        tr.appendChild(tdValue2);
-        tr.appendChild(tdValue3);
-        tr.appendChild(tdValue4);
-        tr.appendChild(tdValue5);
-        tr.appendChild(tdValue6);
-        tr.appendChild(tdValue7);
-        tr.appendChild(tdValue8);
-        tr.appendChild(tdValue9);
-        tr.appendChild(tdValue10);
-        tr.appendChild(tdValue11);
-        tr.appendChild(tdValue12);
-        tr.appendChild(tdValue13);
-
-        thead.appendChild(th);
-        tbody.appendChild(tr);
-      }
-    }
-
-    // Limpa a tabela existente, se houver
-    const existingTable = document.getElementById("product-data-table");
-    if (existingTable) {
-      existingTable.parentNode.removeChild(existingTable);
-    }
-
-    // Adiciona a nova tabela abaixo do formulário
-    table.appendChild(thead);
-    table.appendChild(tbody);
-    // table.setAttribute('idProduction', 'planQuantity');
-    form.parentNode.insertBefore(table, form.nextSibling);
-  }
-});
+// // Função para criar uma URL para o PDF e abrir em uma nova janela
+// function openPdf(pdfBlob) {
+//   const url = URL.createObjectURL(pdfBlob); // Cria uma URL para o Blob
+//   const link = document.createElement('a');
+//   link.href = url;
+//   link.download = 'output.pdf'; // Nome do arquivo a ser baixado
+//   link.click();// Abre a URL em uma nova janela
+// }
