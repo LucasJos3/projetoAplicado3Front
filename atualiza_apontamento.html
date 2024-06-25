@@ -13,9 +13,9 @@
     <a href="./admin.html">
       <img src="./images/logo.png" alt="Logo" class="logo" /></a>
     <nav>
-      <a href="./cadastro.html">Gerenciar Usuarios</a>
+      <a href="./cadastrar_usuario.html">Gerenciar Usuarios</a>
       <a href="./cadastrar_produto.html">Gerenciar Produtos</a>
-      <a href="./apontamento.html" class="active">Gerenciar Apontamento</a>
+      <a href="./cadastrar_apontamento.html" class="active">Gerenciar Apontamento</a>
     </nav>
     <div class="user-icon">
       <img src="images/circle-user.png" alt="User Icon" />
@@ -42,33 +42,44 @@
   </header>
   <nav>
 
-    <div class="content">
-      <div class="form-container">
-        <form id="production-form">
-          <label for="planQuantity">Quantidade Planejada</label>
-          <input type="float" id="planQuantity" name="planQuantity" required><br>
-          <label for="realQuantity">Quantidade Real</label>
-          <input type="float" id="realQuantity" name="realQuantity"><br>
-          <label for="unit">Unidade :</label>
-          <input type="text" id="unit" name="unit" required><br>
-          <label for="startTime">Inicio de produção:</label>
-          <input type="datetime-local" id="startTime" name="startTime"><br>
-          <label for="finishTime">Fim de produção:</label>
-          <input type="datetime-local" id="finishTime" name="finishTime"><br>
-          <label for="downtime">Tempo de parada:</label>
-          <input type="datetime-local" id="downtime" name="downtime"><br>
-          <label for="packageType">Embalagem:</label>
-          <input type="text" id="packageType" name="packageType" required><br>
-          <label for="labelType">Tipo de etiqueta:</label>
-          <input type="text" id="labelType" name="labelType"><br>
-          <label for="equipment">Maquina:</label>
-          <input type="text" id="equipment" name="equipment" required><br>
-          <label for="bestBefore">Data de validade:</label>
-          <input type="date" id="bestBefore" name="bestBefore" required><br>
-          <label for="notes">Observações:</label>
-          <input type="text" id="notes" name="notes"><br>
-          <button type="submit">ATUALIZAR</button>
-      </div>
+    <div class="form-container">
+      <form id="production-form-id">
+        <label for="planQuantity">Quantidade Planejada</label>
+        <input type="float" id="planQuantity" name="planQuantity" required><br>
+
+        <label for="realQuantity">Quantidade Real</label>
+        <input type="float" id="realQuantity" name="realQuantity"><br>
+
+        <label for="unit">Unidade :</label>
+        <input type="text" id="unit" name="unit" required><br>
+
+        <label for="startTime">Inicio de produção:</label>
+        <input type="datetime-local" id="startTime" name="startTime"><br>
+
+        <label for="finishTime">Fim de produção:</label>
+        <input type="datetime-local" id="finishTime" name="finishTime"><br>
+
+        <label for="downtime">Tempo de parada:</label>
+        <input type="datetime-local" id="downtime" name="downtime"><br>
+
+        <label for="packageType">Embalagem:</label>
+        <input type="text" id="packageType" name="packageType" required><br>
+
+        <label for="labelType">Tipo de etiqueta:</label>
+        <input type="text" id="labelType" name="labelType"><br>
+
+        <label for="equipment">Maquina:</label>
+        <input type="text" id="equipment" name="equipment" required><br>
+
+        <label for="bestBefore">Data de validade:</label>
+        <input type="date" id="bestBefore" name="bestBefore" required><br>
+
+        <label for="notes">Observações:</label>
+        <input type="text" id="notes" name="notes"><br>
+        
+        <button type="submit">ATUALIZAR</button>
+      </form>
+    </div>
   </nav>
   <script src="script/script_apontamento.js"></script>
 </body>

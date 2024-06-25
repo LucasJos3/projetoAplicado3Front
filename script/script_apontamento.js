@@ -31,31 +31,48 @@ function logout() {
 }
 
 
+/**Cadastra Apontamento */
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("production-form");
-  let submitting = false;
+  const form = document.getElementById("production-form");  
 
   form.addEventListener("submit", function (event) {
-    event.preventDefault();
+    event.preventDefault(); 
+    
+    const planQuantity = document.getElementById("planQuantity").value;
+    const realQuantity = document.getElementById("realQuantity").value;
+    const unit = document.getElementById("unit").value;
+    const startTime = document.getElementById("startTime").value;
+    const finishTime = document.getElementById("finishTime").value;
+    const downtime = document.getElementById("downtime").value;
+    const packageType = document.getElementById("packageType").value;
+    const labelType = document.getElementById("labelType").value;
+    const equipment = document.getElementById("equipment").value;
+    const bestBefore = document.getElementById("bestBefore").value;
+    const notes = document.getElementById("notes").value;
 
-    if (submitting) {
-      return;
-    }
-
-    submitting = true;
-
-    const formData = new FormData(form);
+    const apontamentoData = {
+      planQuantity: planQuantity,
+      realQuantity: realQuantity,
+      unit: unit,
+      startTime: startTime,
+      finishTime: finishTime,
+      downtime: downtime,
+      packageType: packageType,
+      labelType: labelType,
+      equipment: equipment,
+      bestBefore: bestBefore,
+      notes: notes,
+    };
+    
 
     fetch("http://localhost:8080/production", {
-      method: 'post',
-      body: JSON.stringify(Object.fromEntries(formData)),
+      method: 'POST',      
       headers: {
-        'Content-Type': 'application/json;application/x-www-form-urlencoded'
-      }
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(apontamentoData),
     })
       .then((response) => {
-        submitting = false;
-
         if (!response.ok) {
           throw new Error("Não foi possível cadastrar Apontamento: " + response.statusText);
         }
@@ -73,3 +90,61 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 });
+
+
+/**Atualiza Apontamento */
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("production-form-id");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const planQuantity = document.getElementById("planQuantity").value;
+    const realQuantity = document.getElementById("realQuantity").value;
+    const unit = document.getElementById("unit").value;
+    const startTime = document.getElementById("startTime").value;
+    const finishTime = document.getElementById("finishTime").value;
+    const downtime = document.getElementById("downtime").value;
+    const packageType = document.getElementById("packageType").value;
+    const labelType = document.getElementById("labelType").value;
+    const equipment = document.getElementById("equipment").value;
+    const bestBefore = document.getElementById("bestBefore").value;
+    const notes = document.getElementById("notes").value;
+
+    const apontamentoData = {
+      planQuantity: planQuantity,
+      realQuantity: realQuantity,
+      unit: unit,
+      startTime: startTime,
+      finishTime: finishTime,
+      downtime: downtime,
+      packageType: packageType,
+      labelType: labelType,
+      equipment: equipment,
+      bestBefore: bestBefore,
+      notes: notes,
+    };
+
+    fetch(`http://localhost:8080/product/${productId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json;application/x-www-form-urlencoded",
+      },
+      body: JSON.stringify(apontamentoData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.planQuantity != null) {
+          alert("Apontamento atualizado com sucesso!");
+        } else {
+          alert("Falha ao atualizar o apontamento: " + data.message);
+        }
+        document.getElementById("production-form").reset();
+      })
+      .catch((error) => {
+        console.error("Erro:", error);
+        alert("Ocorreu um erro ao atualizar o apontamento." + data.message);
+      });
+  });
+});
+
