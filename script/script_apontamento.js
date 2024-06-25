@@ -43,7 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const unit = document.getElementById("unit").value;
     const startTime = document.getElementById("startTime").value;
     const finishTime = document.getElementById("finishTime").value;
-    const downtime = document.getElementById("downtime").value;
+    const startDowntime = document.getElementById("startDowntime").value;
+    const finishDowntime = document.getElementById("finishDowntime").value;
     const packageType = document.getElementById("packageType").value;
     const labelType = document.getElementById("labelType").value;
     const equipment = document.getElementById("equipment").value;
@@ -56,7 +57,8 @@ document.addEventListener("DOMContentLoaded", function () {
       unit: unit,
       startTime: startTime,
       finishTime: finishTime,
-      downtime: downtime,
+      startDowntime: startDowntime,
+      finishDowntime: finishDowntime,
       packageType: packageType,
       labelType: labelType,
       equipment: equipment,
@@ -77,14 +79,13 @@ document.addEventListener("DOMContentLoaded", function () {
           throw new Error("Não foi possível cadastrar Apontamento: " + response.statusText);
         }
         alert("Apontamento cadastrado com sucesso!");
-        return response.json(); // Retorna os dados do backend como JSON
+        return 
       })
       .then((data) => {
         displayProductData(data); // Chama a função para exibir os dados
         form.reset(); // Limpa os campos do formulário
       })
-      .catch((error) => {
-        submitting = false;
+      .catch((error) => {        
         alert("Erro ao cadastrar Apontamento: " + error.message);
         form.reset();
       });
