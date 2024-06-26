@@ -33,11 +33,11 @@ function logout() {
 
 /**Cadastra Apontamento */
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("production-form");  
+  const form = document.getElementById("production-form");
 
   form.addEventListener("submit", function (event) {
-    event.preventDefault(); 
-    
+    event.preventDefault();
+
     const planQuantity = document.getElementById("planQuantity").value;
     const realQuantity = document.getElementById("realQuantity").value;
     const unit = document.getElementById("unit").value;
@@ -65,27 +65,27 @@ document.addEventListener("DOMContentLoaded", function () {
       bestBefore: bestBefore,
       notes: notes,
     };
-    
 
     fetch("http://localhost:8080/production", {
-      method: 'POST',      
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(apontamentoData),
-    })
+    })      
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Não foi possível cadastrar Apontamento: " + response.statusText);
-        }
-        alert("Apontamento cadastrado com sucesso!");
-        return 
+          alert("Não foi possível cadastrar Apontamento: " + response.statusText);
+        } else {
+          alert("Apontamento cadastrado com sucesso!");
+          form.reset();
+        }        
       })
       .then((data) => {
         displayProductData(data); // Chama a função para exibir os dados
         form.reset(); // Limpa os campos do formulário
       })
-      .catch((error) => {        
+      .catch((error) => {
         alert("Erro ao cadastrar Apontamento: " + error.message);
         form.reset();
       });
