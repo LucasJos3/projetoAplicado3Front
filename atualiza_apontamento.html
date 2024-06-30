@@ -34,7 +34,7 @@
       <div class="sidebar" id="mySidebar">
         <button class="closebtn" onclick="closeNav()">×</button>
         <ul>
-          <li><a href="./relatorio.html">Gerar Relatorio</a></li>
+          <!-- <li><a href="./relatorio.html">Gerar Relatorio</a></li> -->
           <li><a href="./cadastrar_apontamento.html">Cadastrar Apontamento</a></li>
         </ul>
       </div>
@@ -44,38 +44,49 @@
 
     <div class="form-container">
       <form id="production-form-id">
+        <label for="production-id">Identificador</label>
+        <input type="number" id="production-id" name="production-id" required>
+
         <label for="planQuantity">Quantidade Planejada</label>
-        <input type="float" id="planQuantity" name="planQuantity" required><br>
+        <input type="number" step="0.1" value="0.0" id="planQuantity" name="planQuantity">
 
         <label for="realQuantity">Quantidade Real</label>
-        <input type="float" id="realQuantity" name="realQuantity"><br>
+        <input type="number" step="0.1" value="0.0" id="realQuantity" name="realQuantity">
 
-        <label for="unit">Unidade :</label>
-        <input type="text" id="unit" name="unit" required><br>
+        <label for="unit">Unidade</label>
+        <select name="unit" id="unit" required>
+          <option disabled> - Selecione - </option>
+          <option value="Lt">Litro</option>
+          <option value="Gr">Grama</option>
+          <option value="Kg">Kilo</option>
+          <option value="Uni">Unidade</option>
+        </select>
 
-        <label for="startTime">Inicio de produção:</label>
-        <input type="datetime-local" id="startTime" name="startTime"><br>
+        <label for="finishTime">Fim de produção</label>
+        <input type="datetime-local" id="finishTime" name="finishTime">
 
-        <label for="finishTime">Fim de produção:</label>
-        <input type="datetime-local" id="finishTime" name="finishTime"><br>
+        <label for="startDowntime">Inicio tempo de parada</label>
+        <input type="datetime-local" id="startDowntime" name="startDowntime">
 
-        <label for="downtime">Tempo de parada:</label>
-        <input type="datetime-local" id="downtime" name="downtime"><br>
+        <label for="finishDowntime">Fim tempo de parada</label>
+        <input type="datetime-local" id="finishDowntime" name="finishDowntime">
 
-        <label for="packageType">Embalagem:</label>
-        <input type="text" id="packageType" name="packageType" required><br>
+        <label for="packageType">Embalagem</label>
+        <select name="packageType" id="packageType" required>
+          <option disabled> - Selecione - </option>
+          <option value="Cx">Caixa</option>
+          <option value="Pct">Pacote</option>
+          <option value="Fdo">Fardo</option>
+        </select>
 
-        <label for="labelType">Tipo de etiqueta:</label>
-        <input type="text" id="labelType" name="labelType"><br>
+        <label for="labelType">Tipo de etiqueta</label>
+        <input type="text" id="labelType" name="labelType">
+       
+        <label for="bestBefore">Data de validade</label>
+        <input type="date" id="bestBefore" name="bestBefore">
 
-        <label for="equipment">Maquina:</label>
-        <input type="text" id="equipment" name="equipment" required><br>
-
-        <label for="bestBefore">Data de validade:</label>
-        <input type="date" id="bestBefore" name="bestBefore" required><br>
-
-        <label for="notes">Observações:</label>
-        <input type="text" id="notes" name="notes"><br>
+        <label for="notes">Observações</label>
+        <input type="text" id="notes" name="notes">
         
         <button type="submit">ATUALIZAR</button>
       </form>

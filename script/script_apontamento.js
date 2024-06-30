@@ -100,33 +100,31 @@ document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
+    const productionId = document.getElementById("production-id").value;
     const planQuantity = document.getElementById("planQuantity").value;
     const realQuantity = document.getElementById("realQuantity").value;
-    const unit = document.getElementById("unit").value;
-    const startTime = document.getElementById("startTime").value;
+    const unit = document.getElementById("unit").value;    
     const finishTime = document.getElementById("finishTime").value;
-    const downtime = document.getElementById("downtime").value;
+    const startDowntime = document.getElementById("startDowntime").value;
+    const finishDowntime = document.getElementById("finishDowntime").value;
     const packageType = document.getElementById("packageType").value;
-    const labelType = document.getElementById("labelType").value;
-    const equipment = document.getElementById("equipment").value;
+    const labelType = document.getElementById("labelType").value;    
     const bestBefore = document.getElementById("bestBefore").value;
     const notes = document.getElementById("notes").value;
 
     const apontamentoData = {
       planQuantity: planQuantity,
       realQuantity: realQuantity,
-      unit: unit,
-      startTime: startTime,
+      unit: unit,      
       finishTime: finishTime,
-      downtime: downtime,
+      startDowntime: startDowntime,
+      finishDowntime: finishDowntime,
       packageType: packageType,
-      labelType: labelType,
-      equipment: equipment,
+      labelType: labelType,     
       bestBefore: bestBefore,
       notes: notes,
     };
-
-    fetch(`http://localhost:8080/product/${productId}`, {
+    fetch(`http://localhost:8080/production/${productionId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json;application/x-www-form-urlencoded",
@@ -140,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           alert("Falha ao atualizar o apontamento: " + data.message);
         }
-        document.getElementById("production-form").reset();
+        document.getElementById("production-form-id").reset();
       })
       .catch((error) => {
         console.error("Erro:", error);
